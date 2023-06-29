@@ -19,15 +19,13 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Sekhar Kafle
-email: your-email@example.com
+email: skafle@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  My name is Sekhar Kafle, a seasoned software engineer, IT leader, and an avid AI/ML enthusiast. In this blog, I will discuss topics related to latest trend on Information Technology.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://kafles.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: skafle
+github_username:  sekharkafle
 
 # Build settings
 theme: jekyll-whiteglass
