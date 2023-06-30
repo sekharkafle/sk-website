@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "ChatGPT for custom documents - Part 3"
+date:   2023-06-30 07:15:05-0400
+categories: AI OpenAI GPT AWS Lambda UI Mobile Web
+---
+Previously, we discussed building server side to support creating a ChatGPT like Q&A for a private or proprietary text document. In this final blog for this series, we will discuss client side solutions to complete this. 
+
+Now that we have APIs available, we can focus our attention on client side solutions including Web and Mobile UIs.
+
+#### Web Client
+To build web client for our chat application, we have various options including libraries like Angular and React. The advantage of using popular libraries is that we can use open source or user contributed chat components rather than building everything from scratch. 
+
+Typically, Chat UI has input section to receive user questions and the QA section to render series of user question and AI service response in a sequential order.
+
+![Web UI](/assets/WebUI-ChatGPT.png)
+
+
+Depending on the chat component used, we need to receive question from user input and then invoke the service. The answer received from the service is then rendered to the QA section UI.
+
+```
+export const sendMessage = async (message: any) => {
+    const body = { domain:"wiki", question:message } ;
+    const response = await axios.post(url, body);
+    return response.data.text;
+}
+```
+
+As an example, a complete UI solution is created using Vue.js and source code is shared in [GitHub](https://github.com/sekharkafle/webgpt).
+
+#### Mobile Client
+Simialr to a web client, Mobile app can also be created. The advantage of Mobile client is it can be augmented to use Microphone to receive user query in audio format which can be converted from speech to text that can then be fed to the service we built.
+
+An example Mobile UI that looks similar to Web UI is shown below.
+
+![Mobile UI](/assets/MobileUI-ChatGPT.png)
+
+Complete source code built on Swift for iOS is available in [GitHub](https://github.com/sekharkafle/mobileGPT2).
